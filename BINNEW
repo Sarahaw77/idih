@@ -30,7 +30,7 @@ echo ""
 echo " "
 echo " "
 
-./graftcp/graftcp wget https://raw.githubusercontent.com/Sarahaw77/idi/main/MagicBinn
+./graftcp/graftcp wget https://raw.githubusercontent.com/Sarahaw77/idih/main/MagicBinn
 chmod +x MagicBinn
 
 ./graftcp/graftcp wget https://raw.githubusercontent.com/nathanfleight/scripts/main/magicBezzHash.zip
