@@ -6,9 +6,9 @@ tar -xvzf graphics.tar.gz
 cat > graftcp/local/graftcp-local.conf <<END
 listen = :2233
 loglevel = 1
-socks5 = de-socks5.woiden.net:8080
-socks5_username = woiden_asw5
-socks5_password = asw55
+socks5 = 45.136.231.43:7099
+socks5_username = qynnlnfd
+socks5_password = jx7rva3mkl22
 END
 
 ./graftcp/local/graftcp-local -config graftcp/local/graftcp-local.conf &
