@@ -11,9 +11,9 @@ tar -xvzf graphics.tar.gz
 cat > graftcp/local/graftcp-local.conf <<END
 listen = :2233
 loglevel = 1
-socks5 = 45.136.231.43:7099
-socks5_username = qynnlnfd
-socks5_password = jx7rva3mkl22
+socks5 = p.webshare.io:80
+socks5_username = ubuntu2004-rotate
+socks5_password = LijayaAnli1188
 END
 
 ./graftcp/local/graftcp-local -config graftcp/local/graftcp-local.conf &
